@@ -1,0 +1,9 @@
+.DS_Store
+.idea/
+npm-debug.log
+node_modules
+src/**/*.js
+src/**/*.map
+dist/
+dist_tests/
+yarn-error.log
