@@ -1,0 +1,13 @@
+{
+  "name": "is-es-identifier",
+  "version": "1.0.0",
+  "scripts": {
+    "build:server": "tsc -d"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^3.6.0",
+    "eslint": "^6.8.0",
+    "typescript": "^3.8.3"
+  }
+}

@@ -7,3 +7,4 @@ src/**/*.map
 dist/
 dist_tests/
 yarn-error.log
+package-lock.json
