@@ -10,6 +10,8 @@ export const enum ScriptTarget {
     ES2020 = 7,
     ESNext = 99,
     JSON = 100,
+    Typescript= 200,
+    TS3_8 = Typescript,
     Latest = ESNext,
 }
 

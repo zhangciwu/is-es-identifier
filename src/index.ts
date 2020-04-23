@@ -150,8 +150,8 @@ function charSize(ch: number) {
     return 1;
 }
 
-
-export function isIdentifierText(name: string, languageVersion: ScriptTarget | undefined, identifierVariant?: LanguageVariant): boolean {
+/* @internal */
+function isIdentifierText(name: string, languageVersion: ScriptTarget | undefined, identifierVariant?: LanguageVariant): boolean {
     let ch = codePointAt(name, 0);
     if (!isIdentifierStart(ch, languageVersion)) {
         return false;
@@ -164,4 +164,12 @@ export function isIdentifierText(name: string, languageVersion: ScriptTarget | u
     }
 
     return true;
+}
+
+export function isReserveWord(name:string, languageVersion: ScriptTarget | undefined) {
+
+}
+
+export function transformStringToIdentifier(name: string, replacerIfNotValid, languageVersion: ScriptTarget | undefined, identifierVariant?: LanguageVariant){
+
 }
