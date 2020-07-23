@@ -7,6 +7,17 @@ import {
     unicodeESNextIdentifierPart,
     unicodeESNextIdentifierStart
 } from './codepoints';
+import * as reserveWordEs5 from './reserved/ES5.json';
+import * as reserveWordEs2015 from './reserved/ES2015.json';
+import * as reserveWordTs3_8 from './reserved/TS3.8.json';
+
+
+let reserveWordListByLang: { [k: string]: string[] } = {
+    [ScriptTarget.ES5]: reserveWordEs5,
+    [ScriptTarget.ES2015]: reserveWordEs2015,
+    [ScriptTarget.TS3_8]: reserveWordTs3_8,
+    default: reserveWordEs2015,
+}
 
 
 function lookupInUnicodeMap(code: number, map: readonly number[]): boolean {
@@ -114,8 +125,9 @@ function isIdentifierText(name: string, languageVersion: ScriptTarget | undefine
     return true;
 }
 
-export function isReserveWord(name: string, languageVersion: ScriptTarget | undefined) {
-
+export function isReserveWord(name: string, languageVersion: ScriptTarget = ScriptTarget.ES2015):boolean {
+    let reserveWords:string[] = reserveWordListByLang[languageVersion] || reserveWordListByLang.default;
+    return reserveWords.includes(name);
 }
 
 export function transformStringToIdentifier(name: string, replacerIfNotValid, languageVersion: ScriptTarget | undefined, identifierVariant?: LanguageVariant) {
