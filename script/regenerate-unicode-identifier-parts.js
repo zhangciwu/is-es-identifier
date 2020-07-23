@@ -24,5 +24,5 @@ console.log(`/**
 * unicodeESNextIdentifierStart corresponds to the ID_Start and Other_ID_Start property, and
 * unicodeESNextIdentifierPart corresponds to ID_Continue, Other_ID_Continue, plus ID_Start and Other_ID_Start
 */`);
-console.log(`const unicodeESNextIdentifierStart = [${starts.join(", ")}];`);
-console.log(`const unicodeESNextIdentifierPart = [${parts.join(", ")}];`);
+console.log(`export const unicodeESNextIdentifierStart = [${starts.join(", ")}];`);
+console.log(`export const unicodeESNextIdentifierPart = [${parts.join(", ")}];`);
